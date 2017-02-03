@@ -3,6 +3,7 @@ package org.lindl.controller;
 import org.lindl.entity.DemoEntity;
 import org.lindl.entity.User;
 import org.lindl.mapper.UserMapper;
+import org.lindl.service.IRedisService;
 import org.lindl.service.UserService;
 import org.lindl.utils.RedisClient;
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import redis.clients.jedis.JedisPool;
 
@@ -30,6 +32,9 @@ public class HelloController {
 
     @Autowired
     public RedisClient client;
+
+//    @Autowired
+//    IRedisService redisService;
 
     /**
      * 测试hello
@@ -63,5 +68,25 @@ public class HelloController {
         User user=userService.getUserById(1);
         return user;
     }
+
+//    @RequestMapping(value = "/redis/set",method = RequestMethod.GET)
+//    @ResponseBody
+//    public User redisSet(@RequestParam("value")String value){
+//        redisService.set("name", value);
+//
+//        User user=new User();
+//        user.setUsername(value);
+//        return user;
+//    }
+//
+//    @RequestMapping(value = "/redis/get",method = RequestMethod.GET)
+//    @ResponseBody
+//    public User redisGet(){
+//        String name = redisService.get("name");
+//
+//        User user=new User();
+//        user.setUsername(name);
+//        return user;
+//    }
 
 }
