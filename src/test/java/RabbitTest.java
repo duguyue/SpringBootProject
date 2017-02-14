@@ -1,6 +1,7 @@
 import com.rabbitmq.client.*;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+//import org.junit.Test;
 
 import java.io.IOException;
 
@@ -15,10 +16,10 @@ public class RabbitTest {
     public void testMq(){
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
-        factory.setPort(15672);
-        factory.setUsername("lindl");
-        factory.setPassword("passwd");
-        factory.setVirtualHost("vhost");
+        factory.setPort(5672);
+        factory.setUsername("guest");
+        factory.setPassword("guest");
+        factory.setVirtualHost("/");
 
         try {
             logger.info("=======newConnection======");
@@ -29,7 +30,9 @@ public class RabbitTest {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             String message = "Hello World!";
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-            System.out.println(" [x] Sent '" + message + "'");
+            logger.info("======[x] Sent "+message+"=============");
+
+            new Thread().sleep(5000);
 
 
             //DefaultConsumer类实现了Consumer接口，通过传入一个频道，
@@ -40,13 +43,12 @@ public class RabbitTest {
                                            AMQP.BasicProperties properties, byte[] body)
                         throws IOException {
                     String mes = new String(body, "UTF-8");
-                    System.out.println("Customer Received '" + mes + "'");
+
+                    logger.info("======Customer Received "+mes+"===========");
                 }
             };
             //自动回复队列应答 -- RabbitMQ中的消息确认机制
             channel.basicConsume(QUEUE_NAME, true, consumer);
-
-
 
             channel.close();
             connection.close();
