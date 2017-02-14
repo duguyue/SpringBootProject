@@ -50,7 +50,7 @@ public class SendController implements RabbitTemplate.ConfirmCallback{
         CorrelationData correlationId = new CorrelationData(uuid);
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE, RabbitMQConfig.ROUTINGKEY2, msg,
                 correlationId);
-        return null;
+        return "success";
     }
     /**
      * 消息的回调，主要是实现RabbitTemplate.ConfirmCallback接口

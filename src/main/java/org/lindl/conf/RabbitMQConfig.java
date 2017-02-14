@@ -26,11 +26,17 @@ public class RabbitMQConfig {
      */
     @Bean
     public ConnectionFactory connectionFactory() {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("127.0.0.1",15672);
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("127.0.0.1",5672);
 
-        connectionFactory.setUsername("lindl");
-        connectionFactory.setPassword("passwd");
-        connectionFactory.setVirtualHost("vhost");
+        connectionFactory.setUsername("guest");
+        connectionFactory.setPassword("guest");
+        connectionFactory.setVirtualHost("/");
+
+//        connectionFactory.setUsername("lindl");
+//        connectionFactory.setPassword("passwd");
+//        connectionFactory.setVirtualHost("vhost");
+
+
         connectionFactory.setPublisherConfirms(true); // 必须要设置
         return connectionFactory;
     }
@@ -62,10 +68,10 @@ public class RabbitMQConfig {
      * 针对消费者配置
      * @return
      */
-//    @Bean
-//    public Binding binding() {
-//        return BindingBuilder.bind(queue()).to(defaultExchange()).with(RabbitMQConfig.ROUTINGKEY1);
-//    }
+    @Bean
+    public Binding binding() {
+        return BindingBuilder.bind(queue()).to(defaultExchange()).with(RabbitMQConfig.ROUTINGKEY1);
+    }
 
     /**
      * 配置消息队列2
@@ -82,10 +88,10 @@ public class RabbitMQConfig {
      * 针对消费者配置
      * @return
      */
-//    @Bean
-//    public Binding binding1() {
-//        return BindingBuilder.bind(queue1()).to(defaultExchange()).with(RabbitMQConfig.ROUTINGKEY2);
-//    }
+    @Bean
+    public Binding binding1() {
+        return BindingBuilder.bind(queue1()).to(defaultExchange()).with(RabbitMQConfig.ROUTINGKEY2);
+    }
     /**
      * 接受消息的监听，这个监听会接受消息队列1的消息
      * 针对消费者配置

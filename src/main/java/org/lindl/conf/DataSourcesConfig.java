@@ -25,9 +25,11 @@ public class DataSourcesConfig {
     @Bean(name = "dataSource",destroyMethod = "close")
     public DruidDataSource Construction() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
+
         dataSource.setUrl("jdbc:mysql://localhost:3306/affairmanage");
         dataSource.setUsername("root");
-        dataSource.setPassword("686175");
+        dataSource.setPassword("");
+
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         //配置最大连接
         dataSource.setMaxActive(20);
@@ -42,7 +44,7 @@ public class DataSourcesConfig {
         //一个连接最小生存时间
         dataSource.setMinEvictableIdleTimeMillis(300000);
         //用来检测是否有效的sql
-        dataSource.setValidationQuery("select * from affair");
+        dataSource.setValidationQuery("select * from user");
         dataSource.setTestWhileIdle(true);
         dataSource.setTestOnBorrow(false);
         dataSource.setTestOnReturn(false);
