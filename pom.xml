@@ -119,12 +119,14 @@
         <!--fast json end-->
 
         <!--junit start-->
+        <!--
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
+        -->
         <!--junit end-->
 
         <dependency>
@@ -132,6 +134,7 @@
             <artifactId>sitemesh</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!--
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -142,7 +145,7 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
-
+        -->
     </dependencies>
 
 </project>
