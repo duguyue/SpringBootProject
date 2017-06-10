@@ -47,9 +47,6 @@ public class HelloController {
         entity.setId("1");
         entity.setUsername("niuli ");
         entity.setPassword("123456");
-
-
-
         return entity;
     }
 
@@ -68,6 +65,7 @@ public class HelloController {
         User user=userService.getUserById(1);
         return user;
     }
+
 
 //    @RequestMapping(value = "/redis/set",method = RequestMethod.GET)
 //    @ResponseBody
