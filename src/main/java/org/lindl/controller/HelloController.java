@@ -1,9 +1,6 @@
 package org.lindl.controller;
 
 import org.lindl.entity.DemoEntity;
-import org.lindl.entity.User;
-import org.lindl.mapper.UserMapper;
-import org.lindl.service.IRedisService;
 import org.lindl.service.UserService;
 import org.lindl.utils.RedisClient;
 import org.slf4j.Logger;
@@ -12,11 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import redis.clients.jedis.JedisPool;
-
-import javax.annotation.Resource;
 
 /**
  * Created by lin on 2017/1/29.

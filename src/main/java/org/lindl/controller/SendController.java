@@ -1,7 +1,6 @@
 package org.lindl.controller;
 
 import org.lindl.conf.RabbitMQConfig;
-import org.lindl.entity.User;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.support.CorrelationData;
 import org.springframework.web.bind.annotation.RequestMapping;
