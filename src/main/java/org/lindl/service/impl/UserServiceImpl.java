@@ -1,10 +1,8 @@
 package org.lindl.service.impl;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import org.lindl.entity.User;
 import org.lindl.mapper.UserMapper;
 import org.lindl.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
