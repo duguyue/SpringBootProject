@@ -145,4 +145,23 @@ public class Affair implements Serializable {
 		this.notificatonId = notificatonId;
 	}
 
+	@Override
+	public String toString() {
+		return "Affair{" +
+				"id=" + id +
+				", userId='" + userId + '\'' +
+				", content='" + content + '\'' +
+				", address='" + address + '\'' +
+				", planStartTime=" + planStartTime +
+				", planEndTime=" + planEndTime +
+				", actualStartTime=" + actualStartTime +
+				", actualEndTime=" + actualEndTime +
+				", rank=" + rank +
+				", addContent='" + addContent + '\'' +
+				", belongToType=" + belongToType +
+				", belongToTypeName='" + belongToTypeName + '\'' +
+				", alarmTime=" + alarmTime +
+				", notificatonId=" + notificatonId +
+				'}';
+	}
 }

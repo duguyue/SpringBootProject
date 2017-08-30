@@ -3,6 +3,8 @@ package org.lindl.service.impl;
 import org.lindl.entity.Affair;
 import org.lindl.mapper.AffairMapper;
 import org.lindl.service.AffairService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +18,8 @@ import javax.annotation.Resource;
 public class AffairServiceImpl implements AffairService{
     @Resource
     private AffairMapper affairMapper;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
 
     @Override
