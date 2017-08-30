@@ -10,13 +10,17 @@ import java.util.List;
  * 日期:2017/8/25
  */
 public interface AffairService {
+    /**
+     * 添加事务
+     * @param affair
+     */
     void addAffair(Affair affair);
 
-    void updateAffair(Affair affair);
-
-    void deleteAffair(int id);
-
-    List<Affair> queryAffairs();
-
-    Affair queryAffairById(int id);
+//    void updateAffair(Affair affair);
+//
+//    void deleteAffair(int id);
+//
+//    List<Affair> queryAffairs();
+//
+//    Affair queryAffairById(int id);
 }

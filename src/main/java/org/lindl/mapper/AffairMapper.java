@@ -1,6 +1,7 @@
 package org.lindl.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.lindl.entity.Affair;
 
 /**
  * 描述:
@@ -9,4 +10,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AffairMapper {
+    void addAffair(Affair affair);
 }

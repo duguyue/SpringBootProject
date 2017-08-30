@@ -17,6 +17,15 @@ public class AffairController {
     AffairService affairService;
 
 	@ResponseBody
+	@RequestMapping("/addAffair")
+	public Result addAffair(Affair affair) throws Exception {
+		// TODO 添加用户数据，同时更新缓存
+		affairService.addAffair(affair);
+
+		return new Result(0,"添加事务成功!");
+	}
+/*
+	@ResponseBody
 	@RequestMapping(value = "/queryAffairs")
 	public Result queryAffair(HttpServletRequest request) throws Exception {
 		int page = Integer.parseInt(request.getParameter("page"));
@@ -29,13 +38,7 @@ public class AffairController {
 		return "addAffair";
 	}
 
-	@RequestMapping("/addAffair.action")
-	public String addAffair(Affair affair) throws Exception {
-		// TODO 添加用户数据，同时更新缓存
-		affairService.addAffair(affair);
 
-		return "redirect:queryAffair.action";
-	}
 
 	@RequestMapping("/deleteAffair.action")
 	public String deleteAffair(int id) {
@@ -44,4 +47,5 @@ public class AffairController {
 
 		return "redirect:queryAffair.action";
 	}
+	*/
 }

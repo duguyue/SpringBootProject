@@ -1,34 +1,70 @@
 package org.lindl.entity;
 
-/**
- * Created by lin on 2017/1/29.
- */
 public class User {
-    public int id;
-    public String username;
-    public String password;
 
-    public int getId() {
-        return id;
-    }
+	private int id;
+	private String userId;
+	private String username;
+	private String password;
+	private int coin;
+	private String last_get;
+	
+	final static String PWD_FLAG="%#(&)@!";
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getCoin() {
+		return coin;
+	}
+
+	public void setCoin(int coin) {
+		this.coin = coin;
+	}
+
+	public String getLast_get() {
+		return last_get;
+	}
+
+	public void setLast_get(String last_get) {
+		this.last_get = last_get;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userId=" + userId + ", username="
+				+ username + ", password=" + password + ", coin=" + coin
+				+ ", last_get=" + last_get + "]";
+	}
+	
+	
 }
