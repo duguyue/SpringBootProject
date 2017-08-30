@@ -3,6 +3,8 @@ package org.lindl.controller;
 import org.lindl.entity.Affair;
 import org.lindl.entity.Result;
 import org.lindl.service.AffairService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +17,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AffairController {
 
+	private static Logger logger= LoggerFactory.getLogger(AffairController.class);
+
 	@Resource
     AffairService affairService;
 
 	@ResponseBody
 	@RequestMapping(value="/addAffair",method = RequestMethod.POST)
 	public Result addAffair(@RequestBody Affair affair) throws Exception {
-		System.out.println("------------addAffair-------------");
-		System.out.println(affair);
+		logger.info("添加事务入参",affair);
 		// TODO 添加用户数据，同时更新缓存
 		affairService.addAffair(affair);
 
