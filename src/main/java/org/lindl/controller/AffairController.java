@@ -4,7 +4,9 @@ import org.lindl.entity.Affair;
 import org.lindl.entity.Result;
 import org.lindl.service.AffairService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -17,8 +19,10 @@ public class AffairController {
     AffairService affairService;
 
 	@ResponseBody
-	@RequestMapping("/addAffair")
-	public Result addAffair(Affair affair) throws Exception {
+	@RequestMapping(value="/addAffair",method = RequestMethod.POST)
+	public Result addAffair(@RequestBody Affair affair) throws Exception {
+		System.out.println("------------addAffair-------------");
+		System.out.println(affair);
 		// TODO 添加用户数据，同时更新缓存
 		affairService.addAffair(affair);
 
