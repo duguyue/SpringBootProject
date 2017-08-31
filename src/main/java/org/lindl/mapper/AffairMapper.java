@@ -19,4 +19,5 @@ public interface AffairMapper {
     void deleteAffair(int id);
 
     Affair queryAffairById(int id);
+    void updateAffair(Affair affair);
 }

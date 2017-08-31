@@ -77,4 +77,41 @@
     <select id="queryAffairById" resultType="org.lindl.entity.Affair">
         SELECT * FROM affair WHERE ID=#{id}
     </select>
+    <update id="updateAffair" parameterType="org.lindl.entity.Affair">
+        UPDATE affair
+        <set>
+            <if test="content != null and content !=''" >
+                CONTENT=#{content},
+            </if>
+            <if test="address != null and address !=''" >
+                ADDRESS=#{address},
+            </if>
+            <if test="planStartTime != null and planStartTime !=''" >
+                PLAN_START_TIME=#{planStartTime},
+            </if>
+            <if test="planEndTime != null and planEndTime !=''" >
+                PLAN_END_TIME=#{planEndTime},
+            </if>
+            <if test="rank != null and rank !=''" >
+                RANK=#{rank},
+            </if>
+            <if test="addContent != null and addContent !=''" >
+                REMARK=#{addContent},
+            </if>
+            <if test="belongToType != null and belongToType !=''" >
+                BELONG_TO_TYPE=#{belongToType},
+            </if>
+            <if test="alarmTime != null and alarmTime !=''" >
+                ALARM_TIME=#{alarmTime},
+            </if>
+            <if test="notificatonId != null and notificatonId !=''" >
+                NOTIFICATION_ID=#{notificatonId},
+            </if>
+            UPDATE_TIME=now()
+        </set>
+
+        <where>
+            ID=#{id}
+        </where>
+    </update>
 </mapper>

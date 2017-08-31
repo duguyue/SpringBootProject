@@ -17,8 +17,8 @@ public interface AffairService {
      */
     void addAffair(Affair affair);
 
-//    void updateAffair(Affair affair);
-//
+    void updateAffair(Affair affair);
+
     void deleteAffair(int id);
 
     /**
@@ -27,5 +27,10 @@ public interface AffairService {
      */
     PageInfo queryAffairs(int pageNum,int pageSize);
 
+    /**
+     * 查询单个事务信息
+     * @param id
+     * @return
+     */
     Affair queryAffairById(int id);
 }

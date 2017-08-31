@@ -32,6 +32,13 @@ public class AffairController {
 		return new Result(0,"添加事务成功!");
 	}
 	@ResponseBody
+	@RequestMapping(value = "/updateAffair",method = RequestMethod.POST)
+	public Result updateAffair(@RequestBody Affair affair){
+		logger.info("修改事务入参",affair);
+		affairService.updateAffair(affair);
+		return new Result(0,"修改事务");
+	}
+	@ResponseBody
 	@RequestMapping(value = "/queryAffairs",method = RequestMethod.GET)
 	public Result queryAffair(HttpServletRequest request) throws Exception {
 		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
@@ -54,12 +61,5 @@ public class AffairController {
 
 		return new Result(0,"删除事务");
 	}
-/*
 
-	@RequestMapping("/addAffairUI.action")
-	public String addAffairUI() throws Exception {
-		return "addAffair";
-	}
-
-	*/
 }
