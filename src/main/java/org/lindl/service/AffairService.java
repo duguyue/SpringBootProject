@@ -1,5 +1,6 @@
 package org.lindl.service;
 
+import com.github.pagehelper.PageInfo;
 import org.lindl.entity.Affair;
 
 import java.util.List;
@@ -25,6 +26,8 @@ public interface AffairService {
      * @return
      */
 //    List<Affair> queryAffairs();
+
+    PageInfo queryAffairs(int pageNum,int pageSize);
 
 //    Affair queryAffairById(int id);
 }

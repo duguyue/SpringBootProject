@@ -1,20 +1,20 @@
 package org.lindl.controller;
 
+import com.github.pagehelper.PageInfo;
+import org.hibernate.jpa.criteria.expression.function.AbsFunction;
 import org.lindl.entity.Affair;
 import org.lindl.entity.Result;
 import org.lindl.service.AffairService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-@Controller
+@RestController
+@RequestMapping("/affair")
 public class AffairController {
 
 	private static Logger logger= LoggerFactory.getLogger(AffairController.class);
@@ -31,14 +31,15 @@ public class AffairController {
 
 		return new Result(0,"添加事务成功!");
 	}
-/*
 	@ResponseBody
-	@RequestMapping(value = "/queryAffairs")
+	@RequestMapping(value = "/queryAffairs",method = RequestMethod.GET)
 	public Result queryAffair(HttpServletRequest request) throws Exception {
-		int page = Integer.parseInt(request.getParameter("page"));
+		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 		int pageSize = Integer.parseInt(request.getParameter("pageSize"));
-		return affairService.queryAffairs(page, pageSize);
+		PageInfo<Affair> page=affairService.queryAffairs(pageNum,pageSize);
+		return new Result(0,page,"查询事务列表成功!");
 	}
+/*
 
 	@RequestMapping("/addAffairUI.action")
 	public String addAffairUI() throws Exception {

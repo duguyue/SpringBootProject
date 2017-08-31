@@ -3,6 +3,8 @@ package org.lindl.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.lindl.entity.Affair;
 
+import java.util.List;
+
 /**
  * 描述:
  * 作者:LinDL
@@ -11,4 +13,6 @@ import org.lindl.entity.Affair;
 @Mapper
 public interface AffairMapper {
     void addAffair(Affair affair);
+
+    List<Affair> queryAffairs();
 }

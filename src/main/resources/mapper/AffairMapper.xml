@@ -2,4 +2,71 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="org.lindl.mapper.AffairMapper">
 
+    <insert id="addAffair" parameterType="org.lindl.entity.Affair">
+        insert INTO affair
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userId != null and userId !=''"  >
+                USER_ID,
+            </if>
+            <if test="content != null and content !=''"  >
+                CONTENT,
+            </if>
+            <if test="planStartTime != null and planStartTime !=''"  >
+                PLAN_START_TIME,
+            </if>
+            <if test="planEndTime != null and planEndTime !=''"  >
+                PLAN_END_TIME,
+            </if>
+            <if test="rank != null and rank !=''"  >
+                RANK,
+            </if>
+            <if test="addContent != null and addContent !=''"  >
+                REMARK,
+            </if>
+            <if test="belongToType != null and belongToType !=''"  >
+                BELONG_TO_TYPE,
+            </if>
+            <if test="alarmTime != null and alarmTime !=''"  >
+                ALARM_TIME,
+            </if>
+            <if test="notificatonId != null and notificatonId !=''"  >
+                NOTIFICATION_ID,
+            </if>
+            CREATE_TIME
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null and userId !=''" >
+                #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null and content !=''" >
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="planStartTime != null and planStartTime !=''" >
+                #{planStartTime,jdbcType=VARCHAR},
+            </if>
+            <if test="planEndTime != null and planEndTime !=''" >
+                #{planEndTime,jdbcType=VARCHAR},
+            </if>
+            <if test="rank != null and rank !=''" >
+                #{rank,jdbcType=INTEGER},
+            </if>
+            <if test="addContent != null and addContent !=''" >
+                #{addContent,jdbcType=VARCHAR},
+            </if>
+            <if test="belongToType != null and belongToType !=''" >
+                #{belongToType,jdbcType=INTEGER},
+            </if>
+            <if test="alarmTime != null and alarmTime !=''" >
+                #{alarmTime,jdbcType=INTEGER},
+            </if>
+            <if test="notificatonId != null and notificatonId !=''" >
+                #{notificatonId,jdbcType=INTEGER},
+            </if>
+            now()
+        </trim>
+    </insert>
+
+    <select id="queryAffairs" resultType="org.lindl.entity.Affair">
+        SELECT * FROM affair
+    </select>
 </mapper>
