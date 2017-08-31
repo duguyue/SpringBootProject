@@ -42,4 +42,10 @@ public class AffairServiceImpl implements AffairService{
         PageInfo<Affair> page=new PageInfo(list);
         return page;
     }
+
+    @Override
+    public Affair queryAffairById(int id) {
+        Affair affair=affairMapper.queryAffairById(id);
+        return affair;
+    }
 }

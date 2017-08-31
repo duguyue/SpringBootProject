@@ -15,4 +15,8 @@ public interface AffairMapper {
     void addAffair(Affair affair);
 
     List<Affair> queryAffairs();
+
+    void deleteAffair(int id);
+
+    Affair queryAffairById(int id);
 }

@@ -39,9 +39,15 @@ public class AffairController {
 		PageInfo<Affair> page=affairService.queryAffairs(pageNum,pageSize);
 		return new Result(0,page,"查询事务列表成功!");
 	}
+	@ResponseBody
+	@RequestMapping(value = "/queryAffairById/{id}")
+	public Result queryAffairById(@PathVariable int id){
+		Affair affair=affairService.queryAffairById(id);
+		return new Result(0,affair,"查询单个事务信息");
+	}
 
 	@ResponseBody
-	@RequestMapping("/deleteAffair/{id}")
+	@RequestMapping(value="/deleteAffair/{id}")
 	public Result deleteAffair(@PathVariable int id) {
 		// TODO 删除数据库中指定的记录，然后删除缓存中指定的数据
 		affairService.deleteAffair(id);

@@ -25,9 +25,7 @@ public interface AffairService {
      * 查询所有事务列表
      * @return
      */
-//    List<Affair> queryAffairs();
-
     PageInfo queryAffairs(int pageNum,int pageSize);
 
-//    Affair queryAffairById(int id);
+    Affair queryAffairById(int id);
 }
