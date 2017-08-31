@@ -31,6 +31,11 @@ public class AffairServiceImpl implements AffairService{
     }
 
     @Override
+    public void deleteAffair(int id) {
+        affairMapper.deleteAffair(id);
+    }
+
+    @Override
     public PageInfo queryAffairs(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         List<Affair> list=affairMapper.queryAffairs();

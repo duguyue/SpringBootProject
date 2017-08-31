@@ -19,7 +19,7 @@ public interface AffairService {
 
 //    void updateAffair(Affair affair);
 //
-//    void deleteAffair(int id);
+    void deleteAffair(int id);
 
     /**
      * 查询所有事务列表

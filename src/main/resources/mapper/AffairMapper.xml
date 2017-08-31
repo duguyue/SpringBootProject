@@ -69,4 +69,8 @@
     <select id="queryAffairs" resultType="org.lindl.entity.Affair">
         SELECT * FROM affair
     </select>
+
+    <delete id="deleteAffair">
+        DELETE FROM affair WHERE ID=#{id}
+    </delete>
 </mapper>
