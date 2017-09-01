@@ -6,19 +6,19 @@ import java.util.Date;
 public class Affair implements Serializable {
 
 	private int id;
-	private String userId;
+	private String user_id;
 	private String content;
 	private String address;
-	private Date planStartTime;
-	private Date planEndTime;
-	private Date actualStartTime;
-	private Date actualEndTime;
+	private Date plan_start_time;
+	private Date plan_end_time;
+	private Date actual_start_time;
+	private Date actual_end_time;
 	private int rank;
-	private String addContent;
-	private int belongToType;
+	private String remark;
+	private int belong_to_type;
 	private String belongToTypeName;
-	private int alarmTime;
-	private int notificatonId;
+	private int alarm_time;
+	private int notificaton_id;
 
 	public static final int AFFAIR_RANK_IMPORTANT_HURRY = 1;
 	public static final int AFFAIR_RANK_IMPORTANT_TO_DO = 2;
@@ -33,20 +33,20 @@ public class Affair implements Serializable {
 	public static final int BEFORE_FIVE_HOUR = 5;
 	public static final int BEFORE_ONE_DAY = 6;
 
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getContent() {
@@ -65,36 +65,36 @@ public class Affair implements Serializable {
 		this.address = address;
 	}
 
-	public Date getPlanStartTime() {
-		return planStartTime;
+	public Date getPlan_start_time() {
+		return plan_start_time;
 	}
 
-	public void setPlanStartTime(Date planStartTime) {
-		this.planStartTime = planStartTime;
+	public void setPlan_start_time(Date plan_start_time) {
+		this.plan_start_time = plan_start_time;
 	}
 
-	public Date getPlanEndTime() {
-		return planEndTime;
+	public Date getPlan_end_time() {
+		return plan_end_time;
 	}
 
-	public void setPlanEndTime(Date planEndTime) {
-		this.planEndTime = planEndTime;
+	public void setPlan_end_time(Date plan_end_time) {
+		this.plan_end_time = plan_end_time;
 	}
 
-	public Date getActualStartTime() {
-		return actualStartTime;
+	public Date getActual_start_time() {
+		return actual_start_time;
 	}
 
-	public void setActualStartTime(Date actualStartTime) {
-		this.actualStartTime = actualStartTime;
+	public void setActual_start_time(Date actual_start_time) {
+		this.actual_start_time = actual_start_time;
 	}
 
-	public Date getActualEndTime() {
-		return actualEndTime;
+	public Date getActual_end_time() {
+		return actual_end_time;
 	}
 
-	public void setActualEndTime(Date actualEndTime) {
-		this.actualEndTime = actualEndTime;
+	public void setActual_end_time(Date actual_end_time) {
+		this.actual_end_time = actual_end_time;
 	}
 
 	public int getRank() {
@@ -105,20 +105,20 @@ public class Affair implements Serializable {
 		this.rank = rank;
 	}
 
-	public String getAddContent() {
-		return addContent;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setAddContent(String addContent) {
-		this.addContent = addContent;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
-	public int getBelongToType() {
-		return belongToType;
+	public int getBelong_to_type() {
+		return belong_to_type;
 	}
 
-	public void setBelongToType(int belongToType) {
-		this.belongToType = belongToType;
+	public void setBelong_to_type(int belong_to_type) {
+		this.belong_to_type = belong_to_type;
 	}
 
 	public String getBelongToTypeName() {
@@ -129,39 +129,39 @@ public class Affair implements Serializable {
 		this.belongToTypeName = belongToTypeName;
 	}
 
-	public int getAlarmTime() {
-		return alarmTime;
+	public int getAlarm_time() {
+		return alarm_time;
 	}
 
-	public void setAlarmTime(int alarmTime) {
-		this.alarmTime = alarmTime;
+	public void setAlarm_time(int alarm_time) {
+		this.alarm_time = alarm_time;
 	}
 
-	public int getNotificatonId() {
-		return notificatonId;
+	public int getNotificaton_id() {
+		return notificaton_id;
 	}
 
-	public void setNotificatonId(int notificatonId) {
-		this.notificatonId = notificatonId;
+	public void setNotificaton_id(int notificaton_id) {
+		this.notificaton_id = notificaton_id;
 	}
 
 	@Override
 	public String toString() {
 		return "Affair{" +
 				"id=" + id +
-				", userId='" + userId + '\'' +
+				", user_id='" + user_id + '\'' +
 				", content='" + content + '\'' +
 				", address='" + address + '\'' +
-				", planStartTime=" + planStartTime +
-				", planEndTime=" + planEndTime +
-				", actualStartTime=" + actualStartTime +
-				", actualEndTime=" + actualEndTime +
+				", plan_start_time=" + plan_start_time +
+				", plan_end_time=" + plan_end_time +
+				", actual_start_time=" + actual_start_time +
+				", actual_end_time=" + actual_end_time +
 				", rank=" + rank +
-				", addContent='" + addContent + '\'' +
-				", belongToType=" + belongToType +
+				", remark='" + remark + '\'' +
+				", belong_to_type=" + belong_to_type +
 				", belongToTypeName='" + belongToTypeName + '\'' +
-				", alarmTime=" + alarmTime +
-				", notificatonId=" + notificatonId +
+				", alarm_time=" + alarm_time +
+				", notificaton_id=" + notificaton_id +
 				'}';
 	}
 }

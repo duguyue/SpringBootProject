@@ -9,19 +9,11 @@ public class NoteBook {
 	// private String picture_path;
 	// private Bitmap picture;
 	private int flag;
-	private String userId;
+	private String user_id;
 
 	public static int HAS_SETPASSWORD_DELETE = 1;
 	public static int HAS_SETPASSWORD_MODIFY = 2;
 	public static int HAS_SETPASSWORD_SHARE = 3;
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 
 	public int getId() {
 		return id;
@@ -39,23 +31,29 @@ public class NoteBook {
 		this.content = content;
 	}
 
-	// public String getPicture_path() {
-	// return picture_path;
-	// }
-	// public void setPicture_path(String picture_path) {
-	// this.picture_path = picture_path;
-	// }
-	// public Bitmap getPicture() {
-	// return picture;
-	// }
-	// public void setPicture(Bitmap picture) {
-	// this.picture = picture;
-	// }
 	public int getFlag() {
 		return flag;
 	}
 
 	public void setFlag(int flag) {
 		this.flag = flag;
+	}
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	@Override
+	public String toString() {
+		return "NoteBook{" +
+				"id=" + id +
+				", content='" + content + '\'' +
+				", flag=" + flag +
+				", user_id='" + user_id + '\'' +
+				'}';
 	}
 }
