@@ -8,7 +8,7 @@ import org.lindl.entity.Result;
  * 作者:LinDL
  * 日期:2017/8/25
  */
-public interface ExpenseService {
-    PageInfo queryExpense(int pageNum, int pageSize);
+public interface IncomeService {
+    PageInfo queryIncome(int pageNum, int pageSize);
 
 }

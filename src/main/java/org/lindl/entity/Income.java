@@ -2,9 +2,8 @@ package org.lindl.entity;
 
 public class Income {
 	private int id;
-	private String userId;
-	private int incomeTypeId;
-	private String incomeType;
+	private String user_id;
+	private int income_type_id;
 	private double amount;
 
 	public int getId() {
@@ -15,28 +14,20 @@ public class Income {
 		this.id = id;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
-	public int getIncomeTypeId() {
-		return incomeTypeId;
+	public int getIncome_type_id() {
+		return income_type_id;
 	}
 
-	public void setIncomeTypeId(int incomeTypeId) {
-		this.incomeTypeId = incomeTypeId;
-	}
-
-	public String getIncomeType() {
-		return incomeType;
-	}
-
-	public void setIncomeType(String incomeType) {
-		this.incomeType = incomeType;
+	public void setIncome_type_id(int income_type_id) {
+		this.income_type_id = income_type_id;
 	}
 
 	public double getAmount() {
@@ -46,5 +37,4 @@ public class Income {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-
 }

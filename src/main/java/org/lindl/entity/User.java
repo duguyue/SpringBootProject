@@ -3,11 +3,10 @@ package org.lindl.entity;
 public class User {
 
 	private int id;
-	private String userId;
-	private String username;
+	private String user_id;
+	private String user_name;
 	private String password;
-	private int coin;
-	private String last_get;
+	private String last_login;
 	
 	final static String PWD_FLAG="%#(&)@!";
 
@@ -19,20 +18,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getPassword() {
@@ -43,28 +42,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int getCoin() {
-		return coin;
+	public String getLast_login() {
+		return last_login;
 	}
 
-	public void setCoin(int coin) {
-		this.coin = coin;
+	public void setLast_login(String last_login) {
+		this.last_login = last_login;
 	}
-
-	public String getLast_get() {
-		return last_get;
-	}
-
-	public void setLast_get(String last_get) {
-		this.last_get = last_get;
-	}
-
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", userId=" + userId + ", username="
-				+ username + ", password=" + password + ", coin=" + coin
-				+ ", last_get=" + last_get + "]";
-	}
-	
-	
 }
