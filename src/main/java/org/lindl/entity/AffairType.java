@@ -3,16 +3,8 @@ package org.lindl.entity;
 public class AffairType {
 
 	private int id;
-	private String affairType;
-	private String userId;
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+	private String affair_type;
+	private String user_id;
 
 	public int getId() {
 		return id;
@@ -22,12 +14,28 @@ public class AffairType {
 		this.id = id;
 	}
 
-	public String getAffairType() {
-		return affairType;
+	public String getAffair_type() {
+		return affair_type;
 	}
 
-	public void setAffairType(String affairType) {
-		this.affairType = affairType;
+	public void setAffair_type(String affair_type) {
+		this.affair_type = affair_type;
 	}
 
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+	@Override
+	public String toString() {
+		return "AffairType{" +
+				"id=" + id +
+				", affair_type='" + affair_type + '\'' +
+				", user_id='" + user_id + '\'' +
+				'}';
+	}
 }
