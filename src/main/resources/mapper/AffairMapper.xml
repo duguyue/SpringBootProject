@@ -5,62 +5,62 @@
     <insert id="addAffair" parameterType="org.lindl.entity.Affair">
         insert INTO affair
         <trim prefix="(" suffix=")" suffixOverrides="," >
-            <if test="userId != null and userId !=''"  >
+            <if test="user_id != null and user_id !=''"  >
                 USER_ID,
             </if>
             <if test="content != null and content !=''"  >
                 CONTENT,
             </if>
-            <if test="planStartTime != null and planStartTime !=''"  >
+            <if test="plan_start_time != null and plan_start_time !=''"  >
                 PLAN_START_TIME,
             </if>
-            <if test="planEndTime != null and planEndTime !=''"  >
+            <if test="plan_end_time != null and plan_end_time !=''"  >
                 PLAN_END_TIME,
             </if>
             <if test="rank != null and rank !=''"  >
                 RANK,
             </if>
-            <if test="addContent != null and addContent !=''"  >
+            <if test="remark != null and remark !=''"  >
                 REMARK,
             </if>
-            <if test="belongToType != null and belongToType !=''"  >
+            <if test="belong_to_type != null and belong_to_type !=''"  >
                 BELONG_TO_TYPE,
             </if>
-            <if test="alarmTime != null and alarmTime !=''"  >
+            <if test="alarm_time != null and alarm_time !=''"  >
                 ALARM_TIME,
             </if>
-            <if test="notificatonId != null and notificatonId !=''"  >
+            <if test="notificaton_id != null and notificaton_id !=''"  >
                 NOTIFICATION_ID,
             </if>
             CREATE_TIME
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
-            <if test="userId != null and userId !=''" >
-                #{userId,jdbcType=VARCHAR},
+            <if test="user_id != null and user_id !=''" >
+                #{user_id,jdbcType=VARCHAR},
             </if>
             <if test="content != null and content !=''" >
                 #{content,jdbcType=VARCHAR},
             </if>
-            <if test="planStartTime != null and planStartTime !=''" >
-                #{planStartTime,jdbcType=VARCHAR},
+            <if test="plan_start_time != null and plan_start_time !=''" >
+                #{plan_start_time,jdbcType=VARCHAR},
             </if>
-            <if test="planEndTime != null and planEndTime !=''" >
-                #{planEndTime,jdbcType=VARCHAR},
+            <if test="plan_end_time != null and plan_end_time !=''" >
+                #{plan_end_time,jdbcType=VARCHAR},
             </if>
             <if test="rank != null and rank !=''" >
                 #{rank,jdbcType=INTEGER},
             </if>
-            <if test="addContent != null and addContent !=''" >
-                #{addContent,jdbcType=VARCHAR},
+            <if test="remark != null and remark !=''" >
+                #{remark,jdbcType=VARCHAR},
             </if>
-            <if test="belongToType != null and belongToType !=''" >
-                #{belongToType,jdbcType=INTEGER},
+            <if test="belong_to_type != null and belong_to_type !=''" >
+                #{belong_to_type,jdbcType=INTEGER},
             </if>
-            <if test="alarmTime != null and alarmTime !=''" >
-                #{alarmTime,jdbcType=INTEGER},
+            <if test="alarm_time != null and alarm_time !=''" >
+                #{alarm_time,jdbcType=INTEGER},
             </if>
-            <if test="notificatonId != null and notificatonId !=''" >
-                #{notificatonId,jdbcType=INTEGER},
+            <if test="notificaton_id != null and notificaton_id !=''" >
+                #{notificaton_id,jdbcType=INTEGER},
             </if>
             now()
         </trim>
@@ -86,26 +86,26 @@
             <if test="address != null and address !=''" >
                 ADDRESS=#{address},
             </if>
-            <if test="planStartTime != null and planStartTime !=''" >
-                PLAN_START_TIME=#{planStartTime},
+            <if test="plan_start_time != null and plan_start_time !=''" >
+                PLAN_START_TIME=#{plan_start_time},
             </if>
-            <if test="planEndTime != null and planEndTime !=''" >
-                PLAN_END_TIME=#{planEndTime},
+            <if test="plan_end_time != null and plan_end_time !=''" >
+                PLAN_END_TIME=#{plan_end_time},
             </if>
             <if test="rank != null and rank !=''" >
                 RANK=#{rank},
             </if>
-            <if test="addContent != null and addContent !=''" >
-                REMARK=#{addContent},
+            <if test="remark != null and remark !=''" >
+                REMARK=#{remark},
             </if>
-            <if test="belongToType != null and belongToType !=''" >
-                BELONG_TO_TYPE=#{belongToType},
+            <if test="belong_to_type != null and belong_to_type !=''" >
+                BELONG_TO_TYPE=#{belong_to_type},
             </if>
-            <if test="alarmTime != null and alarmTime !=''" >
-                ALARM_TIME=#{alarmTime},
+            <if test="alarm_time != null and alarm_time !=''" >
+                ALARM_TIME=#{alarm_time},
             </if>
-            <if test="notificatonId != null and notificatonId !=''" >
-                NOTIFICATION_ID=#{notificatonId},
+            <if test="notificaton_id != null and notificaton_id !=''" >
+                NOTIFICATION_ID=#{notificaton_id},
             </if>
             UPDATE_TIME=now()
         </set>
