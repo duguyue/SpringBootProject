@@ -26,7 +26,7 @@ public class DataSourcesConfig {
     public DruidDataSource Construction() throws SQLException {
         DruidDataSource dataSource = new DruidDataSource();
 
-        dataSource.setUrl("jdbc:mysql://localhost:3306/affairmanage");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/affair_manage");
         dataSource.setUsername("root");
         dataSource.setPassword("686175");
 

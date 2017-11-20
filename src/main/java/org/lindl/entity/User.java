@@ -1,34 +1,52 @@
 package org.lindl.entity;
 
-/**
- * Created by lin on 2017/1/29.
- */
 public class User {
-    public int id;
-    public String username;
-    public String password;
 
-    public int getId() {
-        return id;
-    }
+	private int id;
+	private String user_id;
+	private String user_name;
+	private String password;
+	private String last_login;
+	
+	final static String PWD_FLAG="%#(&)@!";
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getUsername() {
-        return username;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+	public String getUser_id() {
+		return user_id;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getLast_login() {
+		return last_login;
+	}
+
+	public void setLast_login(String last_login) {
+		this.last_login = last_login;
+	}
 }

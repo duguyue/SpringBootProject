@@ -1,12 +1,11 @@
 package org.lindl.service;
 
-import org.lindl.entity.User;
-import org.springframework.stereotype.Service;
+import com.github.pagehelper.PageInfo;
 
 /**
  * Created by lin on 2017/2/1.
  */
 
 public interface UserService {
-    public User getUserById(int id);
+    PageInfo queryUsers(int pageNum,int pageSize);
 }

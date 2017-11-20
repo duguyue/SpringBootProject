@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.lindl.mapper.AffairMapper">
+
+    <insert id="addAffair" parameterType="org.lindl.entity.Affair">
+        insert INTO affair
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="user_id != null and user_id !=''"  >
+                USER_ID,
+            </if>
+            <if test="content != null and content !=''"  >
+                CONTENT,
+            </if>
+            <if test="plan_start_time != null and plan_start_time !=''"  >
+                PLAN_START_TIME,
+            </if>
+            <if test="plan_end_time != null and plan_end_time !=''"  >
+                PLAN_END_TIME,
+            </if>
+            <if test="rank != null and rank !=''"  >
+                RANK,
+            </if>
+            <if test="remark != null and remark !=''"  >
+                REMARK,
+            </if>
+            <if test="belong_to_type != null and belong_to_type !=''"  >
+                BELONG_TO_TYPE,
+            </if>
+            <if test="alarm_time != null and alarm_time !=''"  >
+                ALARM_TIME,
+            </if>
+            <if test="notificaton_id != null and notificaton_id !=''"  >
+                NOTIFICATION_ID,
+            </if>
+            CREATE_TIME
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="user_id != null and user_id !=''" >
+                #{user_id,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null and content !=''" >
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="plan_start_time != null and plan_start_time !=''" >
+                #{plan_start_time,jdbcType=VARCHAR},
+            </if>
+            <if test="plan_end_time != null and plan_end_time !=''" >
+                #{plan_end_time,jdbcType=VARCHAR},
+            </if>
+            <if test="rank != null and rank !=''" >
+                #{rank,jdbcType=INTEGER},
+            </if>
+            <if test="remark != null and remark !=''" >
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="belong_to_type != null and belong_to_type !=''" >
+                #{belong_to_type,jdbcType=INTEGER},
+            </if>
+            <if test="alarm_time != null and alarm_time !=''" >
+                #{alarm_time,jdbcType=INTEGER},
+            </if>
+            <if test="notificaton_id != null and notificaton_id !=''" >
+                #{notificaton_id,jdbcType=INTEGER},
+            </if>
+            now()
+        </trim>
+    </insert>
+
+    <select id="queryAffairs" resultType="org.lindl.entity.Affair">
+        SELECT * FROM affair
+    </select>
+
+    <delete id="deleteAffair">
+        DELETE FROM affair WHERE ID=#{id}
+    </delete>
+
+    <select id="queryAffairById" resultType="org.lindl.entity.Affair">
+        SELECT * FROM affair WHERE ID=#{id}
+    </select>
+    <update id="updateAffair" parameterType="org.lindl.entity.Affair">
+        UPDATE affair
+        <set>
+            <if test="content != null and content !=''" >
+                CONTENT=#{content},
+            </if>
+            <if test="address != null and address !=''" >
+                ADDRESS=#{address},
+            </if>
+            <if test="plan_start_time != null and plan_start_time !=''" >
+                PLAN_START_TIME=#{plan_start_time},
+            </if>
+            <if test="plan_end_time != null and plan_end_time !=''" >
+                PLAN_END_TIME=#{plan_end_time},
+            </if>
+            <if test="rank != null and rank !=''" >
+                RANK=#{rank},
+            </if>
+            <if test="remark != null and remark !=''" >
+                REMARK=#{remark},
+            </if>
+            <if test="belong_to_type != null and belong_to_type !=''" >
+                BELONG_TO_TYPE=#{belong_to_type},
+            </if>
+            <if test="alarm_time != null and alarm_time !=''" >
+                ALARM_TIME=#{alarm_time},
+            </if>
+            <if test="notificaton_id != null and notificaton_id !=''" >
+                NOTIFICATION_ID=#{notificaton_id},
+            </if>
+            UPDATE_TIME=now()
+        </set>
+
+        <where>
+            ID=#{id}
+        </where>
+    </update>
+</mapper>
