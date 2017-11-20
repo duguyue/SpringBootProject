@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <sitemesh:write property='title' /> - ltcms
+    </title>
+    <script type="application/javascript" src="../plugin/seajs/2.2.0/sea.js"></script>
+    <sitemesh:write property='head' />
+
+</head>
+<body>
+<script>
+    seajs.config({
+        base: "../plugin/",
+        alias: {
+            "jquery": "jquery/1.10.1/jquery.js"
+        }
+    });
+
+
+    <!--获取传过来页面的id-->
+//    var pageId="";
+//    seajs.use("../js/"+pageId);
+</script>
+
+
+
+
+<header>header</header>
+<hr />
+title将被填充到这儿：
+===========================================
+<sitemesh:write property='title' /><br />
+body将被填充到这儿：
+===========================================
+<sitemesh:write property='body' />
+<hr />
+
+<sitemesh:write property='site' />
+<hr />
+
+<footer>footer</footer>
+
+<sitemesh:write property='site' />
+
+</body>
+</html>

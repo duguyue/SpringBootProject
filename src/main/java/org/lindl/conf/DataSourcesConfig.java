@@ -28,7 +28,7 @@ public class DataSourcesConfig {
 
         dataSource.setUrl("jdbc:mysql://localhost:3306/affairmanage");
         dataSource.setUsername("root");
-        dataSource.setPassword("");
+        dataSource.setPassword("686175");
 
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         //配置最大连接

@@ -82,11 +82,11 @@ public class FilterConfig {
         return registration;
     }
     */
-    @Bean
-    public FilterRegistrationBean siteMeshFilter(){
-        FilterRegistrationBean filter=new FilterRegistrationBean();
-        WebSiteMeshFilter siteMeshFilter=new WebSiteMeshFilter();
-        filter.setFilter(siteMeshFilter);
-        return filter;
-    }
+//    @Bean
+//    public FilterRegistrationBean siteMeshFilter(){
+//        FilterRegistrationBean filter=new FilterRegistrationBean();
+//        WebSiteMeshFilter siteMeshFilter=new WebSiteMeshFilter();
+//        filter.setFilter(siteMeshFilter);
+//        return filter;
+//    }
 }
